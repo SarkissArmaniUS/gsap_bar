@@ -19,7 +19,7 @@ const App = () => {
 	 <Cocktails />
 	 <About />
 	 <Art />
-	 <Menu />
+   <Menu />
 	 <Contact />
 	</main>
  )
