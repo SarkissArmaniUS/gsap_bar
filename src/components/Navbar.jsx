@@ -5,18 +5,16 @@ import { navLinks } from '../../constants/index.js'
 
 const Navbar = () => {
  useGSAP(() => {
-	const navTween = gsap.timeline({
-	 scrollTrigger: {
-		trigger: 'nav',
-		start: 'bottom top'
-	 }
-	});
+	gsap.set('nav', { backgroundColor: 'transparent' });
 	
-	navTween.fromTo('nav', { backgroundColor: 'transparent' }, {
-	 backgroundColor: '#00000050',
-	 backgroundFilter: 'blur(10px)',
-	 duration: 1,
-	 ease: 'power1.inOut'
+	gsap.to('nav', {
+	 backgroundColor: '#00000080',
+	 scrollTrigger: {
+		trigger: '#hero',
+		start: 'top top',
+		end: 'bottom top',
+		toggleActions: 'play none none reverse'
+	 }
 	});
  })
  
