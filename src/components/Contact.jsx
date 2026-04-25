@@ -25,7 +25,7 @@ const Contact = () => {
 		.to('#f-right-leaf', {
 		 y: '-50', duration: 1, ease: 'power1.inOut'
 	 }).to('#f-left-leaf', {
-		 y: '-50', duration: 1, ease: 'power1.inOut' // The last leaf get free space between the div and bottom area
+		 y: '-50', duration: 1, ease: 'power1.inOut'
 	 }, '<')
 	})
  
@@ -45,7 +45,7 @@ const Contact = () => {
 		<div>
 		 <h3>Contact Us</h3>
 		 <p>(555) 987-6543</p>
-		 <p>hello@jsmcocktail.com</p>
+		 <p>hello@barcocktail.com</p>
 		</div>
 		
 		<div>
