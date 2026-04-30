@@ -1,16 +1,95 @@
-# React + Vite
+# Velvet Pour - Cocktail Bar Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for Velvet Pour, a premium cocktail bar featuring elegant design, smooth animations, and an immersive user experience.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Smooth Animations**: Powered by GSAP for engaging scroll-triggered effects
+- **Modern UI**: Built with Tailwind CSS for clean, contemporary styling
+- **Interactive Elements**: Dynamic navbar with background changes on scroll
+- **Video Background**: Hero section with autoplay video for visual impact
+- **Component-Based Architecture**: Modular React components for maintainability
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, Vite
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP (GreenSock Animation Platform)
+- **Responsive**: React Responsive
+- **Build Tool**: Vite
+- **Deployment**: Vercel
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/velvet-pour.git
+   cd velvet-pour
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## 📱 Sections
+
+- **Hero**: Eye-catching introduction with video background and animated text
+- **Cocktails**: Showcase of signature drinks
+- **About**: Information about the bar's story and philosophy
+- **Art**: Visual elements and design inspiration
+- **Menu**: Complete drink menu
+- **Contact**: Location, hours, and contact information
+
+## 🎨 Customization
+
+The website uses Tailwind CSS for styling. Colors, fonts, and layouts can be easily customized in the component files and Tailwind configuration.
+
+## 📦 Deployment
+
+This project is configured for easy deployment on Vercel:
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Vercel will automatically detect the Vite configuration and deploy
+
+For manual deployment:
+```bash
+npm run build
+npm run preview
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📞 Contact
+
+For questions or feedback, please reach out through the contact section of the website.
