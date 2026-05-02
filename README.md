@@ -16,7 +16,7 @@ A modern, responsive website for Velvet Pour, a premium cocktail bar featuring e
 - **Frontend**: React 19, Vite
 - **Styling**: Tailwind CSS
 - **Animations**: GSAP (GreenSock Animation Platform)
-- **Responsive**: React Responsive
+- **Responsive**: React Responsives
 - **Build Tool**: Vite
 - **Deployment**: Vercel
 
