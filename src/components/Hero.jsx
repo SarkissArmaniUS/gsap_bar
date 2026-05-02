@@ -25,6 +25,7 @@ const Hero = () => {
 	 duration: 1.8,
 	 ease: "expo.out",
 	 stagger: 0.06,
+	 force3D: true,
 	});
 	
 	gsap.from(paragraphSplit.lines, {
@@ -34,40 +35,52 @@ const Hero = () => {
 	 ease: "expo.out",
 	 stagger: 0.06,
 	 delay: 1,
+	 force3D: true,
 	});
 	
-	gsap
-	.timeline({
-	 scrollTrigger: {
-		trigger: "#hero",
-		start: "top top",
-		end: "bottom top",
-		scrub: true,
-	 },
-	})
-	.to(".right-leaf", { y: 200 }, 0)
-	.to(".left-leaf", { y: -200 }, 0)
-	.to(".arrow", { y: 100 }, 0);
+	// Disable scrubbig on mobile for performance
+	if (!isMobile) {
+	 gsap
+	 .timeline({
+		scrollTrigger: {
+		 trigger: "#hero",
+		 start: "top top",
+		 end: "bottom top",
+		 scrub: 1.2,
+		 fastPixel: true,
+		},
+	 })
+	 .to(".right-leaf", { y: 200, force3D: true }, 0)
+	 .to(".left-leaf", { y: -200, force3D: true }, 0)
+	 .to(".arrow", { y: 100, force3D: true }, 0);
+	}
 	
-	const startValue = isMobile ? "top 50%" : "center 60%";
-	const endValue = isMobile ? "120% top" : "bottom top";
-	
-	let tl = gsap.timeline({
-	 scrollTrigger: {
-		trigger: "video",
-		start: startValue,
-		end: endValue,
-		scrub: true,
-		pin: true,
-	 },
-	});
-	
-	videoRef.current.onloadedmetadata = () => {
-	 tl.to(videoRef.current, {
-		currentTime: videoRef.current.duration,
+	// Disable video scrubbing on mobile
+	if (!isMobile) {
+	 const startValue = "center 60%";
+	 const endValue = "bottom top";
+	 
+	 let tl = gsap.timeline({
+		scrollTrigger: {
+		 trigger: "video",
+		 start: startValue,
+		 end: endValue,
+		 scrub: 1.2,
+		 fastPixel: true,
+		 pin: true,
+		},
 	 });
-	};
- }, []);
+	 
+	 videoRef.current.onloadedmetadata = () => {
+	  tl.to(videoRef.current, {
+		 currentTime: videoRef.current.duration,
+	  });
+	 };
+	} else {
+	 // Mobile: just play video normally
+	 videoRef.current.play();
+	}
+ }, [isMobile]);
  
  return (
 	<>

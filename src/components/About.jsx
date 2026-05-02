@@ -1,8 +1,11 @@
 import gsap from 'gsap';
 import { SplitText} from 'gsap/all'
 import { useGSAP } from '@gsap/react'
+import { useMediaQuery } from 'react-responsive';
 
 const About = () => {
+ const isMobile = useMediaQuery({ maxWidth: 767 });
+ 
  useGSAP(() => {
 	const titleSplit = SplitText.create('#about h2', {
 	 type: 'words'
@@ -17,12 +20,12 @@ const About = () => {
 	
 	scrollTimeline
 	 .from(titleSplit.words, {
-		opacity: 0, duration: 1, yPercent: 100, ease: 'expo.out', stagger: 0.02
+		opacity: 0, duration: 1, yPercent: 100, ease: 'expo.out', stagger: 0.02, force3D: true
 	})
 	 .from('.top-grid div, .bottom-grid div', {
-		opacity: 0, duration: 1, ease: 'power1.inOut', stagger: 0.04,
+		opacity: 0, duration: 1, ease: 'power1.inOut', stagger: 0.04, force3D: true
 	}, '-=0.5')
- })
+ }, [isMobile])
  
  return (
 	<div id="about">

@@ -1,26 +1,33 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
 import { cocktailLists, mockTailLists } from '../../constants/index.js'
+import { useMediaQuery } from 'react-responsive';
 
 const Cocktails = () => {
+ const isMobile = useMediaQuery({ maxWidth: 767 });
+ 
  useGSAP(() => {
+	// Disable complex animations on mobile
+	if (isMobile) return;
+	
 	const parallaxTimeline = gsap.timeline({
 	 scrollTrigger: {
 		trigger: '#cocktails',
 		start: 'top 30%',
 		end: 'bottom 80%',
-		scrub: true,
+		scrub: 1.2,
+		fastPixel: true,
 	 }
 	})
 	
 	parallaxTimeline
 	 .from('#c-left-leaf', {
-		x: -100, y: 100
+		x: -100, y: 100, force3D: true
 	})
 	 .from('#c-right-leaf', {
-		x: 100, y: 100
+		x: 100, y: 100, force3D: true
 	})
- })
+ }, [isMobile])
  
  return (
 	<section id="cocktails" className="noisy">

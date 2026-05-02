@@ -10,15 +10,15 @@ const Menu = () => {
  const [currentIndex, setCurrentIndex] = useState(0);
  
  useGSAP(() => {
-	gsap.fromTo('#title', { opacity: 0 }, { opacity: 1, duration: 1 });
+	gsap.fromTo('#title', { opacity: 0 }, { opacity: 1, duration: 1, force3D: true });
 	gsap.fromTo('.cocktail img', { opacity: 0, xPercent: -100 }, {
-	 xPercent: 0, opacity: 1, duration: 1, ease: 'power1.inOut'
+	 xPercent: 0, opacity: 1, duration: 1, ease: 'power1.inOut', force3D: true
 	})
 	gsap.fromTo('.details h2', { yPercent: 100, opacity: 0 }, {
-	 yPercent: 0, opacity: 100, ease: 'power1.inOut'
+	 yPercent: 0, opacity: 100, ease: 'power1.inOut', force3D: true
 	})
 	gsap.fromTo('.details p', { yPercent: 100, opacity: 0 }, {
-	 yPercent: 0, opacity: 100, ease: 'power1.inOut'
+	 yPercent: 0, opacity: 100, ease: 'power1.inOut', force3D: true
 	})
  }, [currentIndex]);
  
