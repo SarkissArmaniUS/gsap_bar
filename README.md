@@ -68,28 +68,8 @@ The built files will be in the `dist` directory.
 
 The website uses Tailwind CSS for styling. Colors, fonts, and layouts can be easily customized in the component files and Tailwind configuration.
 
-## 📦 Deployment
-
-This project is configured for easy deployment on Vercel:
-
-1. Push your code to GitHub
-2. Connect your GitHub repository to Vercel
-3. Vercel will automatically detect the Vite configuration and deploy
-
 For manual deployment:
 ```bash
 npm run build
 npm run preview
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-For questions or feedback, please reach out through the contact section of the website.
